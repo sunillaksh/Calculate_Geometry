@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<div class="row">
+<div class="column">
+    <img src="{% static 'shape_image/Rectangle.png' %}"  class="shapeimg">
+</div>
+
+<div class="column shape-cal">
+<form action="" method="get">
+    <h1>Rectangle</h1>
+    <label>length l</label>
+    <input type="text" name="SideA" value="{{n1}}"> <br><br>
+    <label>width w</label>
+    <input type="text" name="SideB" value="{{n2}}"> <br><br>
+    <input type="submit" value="Calculate" class="btn"><br><br>
+    <label>Area</label>
+    <input type="text" value="{{Area}}" disabled> <br><br>
+    <label>Perimeter</label>
+    <input type="text" value="{{Perimeter}}" disabled>
+</form>
+</div>
+
+
+<div class="column">
+    <img src="{% static 'shape_formula/RectangleFormula.png' %}"  class="shapeformula">
+</div>
+</div>
+{% endblock content %}

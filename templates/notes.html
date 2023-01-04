@@ -1,0 +1,67 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="note-search">
+<form action="" method="post">
+    {% csrf_token %}
+        <label for=""></label>
+        <input type="text" name="note_tl" id="" value="{{note_ttl}}"  style="width: 40%;" required>
+        <input type="submit" value="Search">
+</form>
+</div>
+
+
+<div class="note-table">
+    <table >
+        <tr>
+            <th style="width:20%">Subject</th>
+            <th style="width:20%">Title</th>
+            <th style="width:30%">Details</th>
+            <th style="width:10%"></th>
+            <th style="width:10%"></th>
+            <th style="width:10%"></th>
+        </tr>
+        {% for x in Student_notedata %}
+        <tr>
+            <td>{{ x.note_sub }} </td>
+            <td>{{ x.note_title }}</td>
+            <td>{{ x.note_para }}</td>
+            <td><a href="/notedetail/{{x.id}}"><span class="material-symbols-outlined">visibility</span></a></td>
+            <td><a href="/noteedit/{{x.id}}"><span class="material-symbols-outlined">edit_note</span></a></td>            
+            <td><a href="/notedelet/{{x.id}}"><span class="material-symbols-outlined">delete</span></a></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div>
+    <h3>Create new note..............</h3>
+</div>
+
+<div class="notes-div">
+    <form action="{% url 'notecreate' %}" method="post">
+        {% csrf_token %}
+        <div class="col-25">
+            <label>Subject</label>
+        </div>
+        <div class="col-75">
+            <input type="text" name="note_sb" Required> <br><br>
+        </div>
+        <div class="col-25">
+            <label>Title</label>
+        </div>
+        <div class="col-75">
+            <input type="text" name="note_tl" Required> <br><br>
+        </div>
+        <div class="col-25">
+            <label>Details</label>
+        </div>
+        <textarea cols="30" rows="10" name="note_pr" placeholder="Write something.........." Required></textarea> <br><br>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

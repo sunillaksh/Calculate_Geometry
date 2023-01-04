@@ -1,0 +1,75 @@
+/* table */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-decoration: none;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.note-table {
+    padding: 10px;
+}
+
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 0;
+}
+
+
+/* notes div */
+
+.notes-div {
+    background-color: #2ba6cb;
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.txt-75 {
+    width: 75%;
+    margin-top: 6px;
+}
+
+textarea {
+    width: 75%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+@media screen and (max-width: 600px) {
+    .col-25,
+    .col-75,
+    textarea {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.note-search {
+    padding: 10px;
+}

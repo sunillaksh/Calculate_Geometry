@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<div class="row">
+<div class="column">
+    <img src="{% static 'shape_image/Triangle.png' %}"  class="shapeimg">
+</div>
+
+<div class="column shape-cal">
+<form action="" method="get">
+    <h1>Triangle</h1>
+    <label>side a</label>
+    <input type="text" name="SideA" value="{{n1}}"> <br><br>
+    <label>side b</label>
+    <input type="text" name="SideB" value="{{n2}}"> <br><br>
+    <label>side c</label>
+    <input type="text" name="SideC" value="{{n3}}"><br><br>
+    <input type="submit" value="Calculate" class="btn"> <br><br>
+    <label>Area</label>
+    <input type="text" value="{{Area}}" disabled> <br><br>
+    <label>Perimeter</label>
+    <input type="text" value="{{Perimeter}}" disabled> <br><br>
+    <label>SemiPerimeter</label>
+    <input type="text" value="{{SemiPerimeter}}" disabled>
+</form>
+</div>
+
+<div class="column">
+    <img src="{% static 'shape_formula/TriangleFormula.png' %}"  class="shapeformula">
+</div>
+</div>
+{% endblock content %}

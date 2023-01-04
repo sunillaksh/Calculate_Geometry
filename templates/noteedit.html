@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="notes-div">
+    <form action="savenoteedit/{{ Student_notedata.id }}" method="post">
+        {% csrf_token %}
+        <div class="col-25">
+            <label>Subject</label>
+        </div>
+        <div class="col-75">
+            <input type="text" name="note_sb" value="{{ Student_notedata.note_sub }}" Required> <br><br>
+        </div>
+        <div class="col-25">
+            <label>Title</label>
+        </div>
+        <div class="col-75">
+            <input type="text" name="note_tl"  value="{{ Student_notedata.note_title }}" Required> <br><br>
+        </div>
+        <div class="col-25">
+            <label>Details</label>
+        </div>
+        <textarea cols="30" rows="10" name="note_pr" Required>{{ Student_notedata.note_para}}</textarea><br><br>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+
+
+{% endblock content %}

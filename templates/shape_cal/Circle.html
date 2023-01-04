@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="row">
+
+    <div class="column shapeimg-sml">
+        <img src="{% static 'shape_image/Circle.png' %}" class="shapeimg">
+    </div>
+
+    <div class="column shape-cal">
+        <form action="" method="get">
+            <h1>Circle</h1>
+            <label>radius r</label>
+            <input type="text" name="SideA" value="{{n1}}" placeholder="{{e}}"> <br><br>
+            <input type="submit" value="Calculate" class="btn" ><br><br>
+            <label>Area</label>
+            <input type="text" value="{{Area}}" disabled> <br><br>
+            <label>Circumference</label>
+            <input type="text" value="{{Circumference}}" disabled> <br><br>
+            <label>Diameter</label>
+            <input type="text" value="{{Diameter}}" disabled>
+        </form>
+    </div>
+
+    <div class="column">
+        <img src="{% static 'shape_formula/CircleFormula.png' %}" class="shapeformula">
+    </div>
+
+</div>
+
+{% endblock content %}

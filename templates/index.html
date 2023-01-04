@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/header.css">
+    <link rel="stylesheet" href="/static/calculation.css">
+    <link rel="stylesheet" href="/static/notes.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+
+    {% load static %}
+<div class="header-bar">    
+    <div class="webtop">
+        <div class="mainlogo">
+          <a href="/"><img src="{% static 'shape_image/logo.png' %}" style="max-width: 100px;"></a>
+        </div>
+        <div class="webname">
+          <a href="/"><h1> Calculate_Geometry </h1></a>
+        </div>
+        
+        {% if request.user.is_authenticated %}
+        <div>
+            <p> Hello,{{request.user | title}} </p>
+        </div>
+        <div>
+          <p><a href="/signout" >SignOut </a></p>
+        </div>
+        {% else %}
+        <div>
+          <p><a href="/signin">SignIn</a> </p>
+        </div>
+        {% endif %}
+    </div>
+
+    <nav>
+        <div class="topnav" id="myTopnav">
+            <a href="/" class="singlelnk {% if request.path == "/" %}active{% endif %}">Home</a>
+            <div class="dropdown">
+              <button class="dropbtn">2D Shapes  <i class="fa fa-caret-down" aria-hidden="true"></i> </button>
+              <div class="dropdown-content">
+                <a href="/Square">Square</a>
+                <a href="/Rectangle">Rectangle</a>
+                <a href="/Triangle">Triangle</a>
+                <a href="/Circle">Circle</a>
+              </div>
+            </div> 
+            <div class="dropdown">
+              <button class="dropbtn">3D Shapes  <i class="fa fa-caret-down" aria-hidden="true"></i> </button>
+              <div class="dropdown-content">
+                <a href="/Cube">Cube</a>
+                <a href="/Cuboid">Cuboid</a>
+                <a href="/Sphere">Sphere</a>
+                <a href="/Cylinder">Cylinder</a>
+                <a href="/Cone">Cone</a>
+              </div>
+            </div> 
+            {% if request.user.is_authenticated %}
+            <a href="/notes" class="singlelnk {% if request.path == "/notes" %}active{% endif %}">Notes</a>
+            {% endif %}
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+    </nav>  
+</div>   
+    
+{% for message in messages %}
+  <div class="fls-msg">
+    <strong>Message:</strong>{{ message }}
+  </div>
+{% endfor %}
+
+
+    
+ <div class="bodycontainer">
+    {% block content %} {% endblock content %}
+ </div>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+        </script>
+</body>
+</html>

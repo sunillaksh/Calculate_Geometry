@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<div class="row">
+<div class="column">
+    <img src="{% static 'shape_image/Square.png' %}" class="shapeimg">
+</div>
+
+<div class="column shape-cal">
+    <h1>Square</h1>
+<form action="" method="get">
+    <label>side s</label>
+    <input type="text" name="SideA" value="{{n1}}"> <br><br>
+    <input type="submit" value="Calculate" class="btn"><br><br>
+    <label>Area</label>
+    <input type="text" value="{{Area}}" disabled> <br><br>
+    <label>Perimeter</label>
+    <input type="text" value="{{Perimeter}}" disabled>
+</form>
+</div>
+
+
+<div class="column">
+    <img src="{% static 'shape_formula/SquareFormula.png' %}"  class="shapeformula">
+</div>
+</div>
+{% endblock content %}
