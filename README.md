@@ -2,8 +2,8 @@
 A web app for geometric calculations and make notes. 
 
 
-* For big screen 
-![notes](https://user-images.githubusercontent.com/102748713/210547060-23d11e96-767e-477c-9ac6-4d5d26f41dd4.png)
+* For big screen   <br><br>
+![image](https://user-images.githubusercontent.com/102748713/210548257-c3167e59-7435-44d6-aca1-ee5bce37528b.png)
 
 * For small screen  <br><br>
-![image](https://user-images.githubusercontent.com/102748713/210547199-0585ab77-5617-425b-9f94-47b4ab74448e.png)
+![image](https://user-images.githubusercontent.com/102748713/210548493-6f9873c4-60d6-4a3e-84c0-fc5d00e1796a.png)
